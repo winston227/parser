@@ -44,7 +44,7 @@ def get_content(html):
         for item in items:
             lots.append({
                 'ID': item.find('b', class_='text-primary').get_text(),
-                'Name': item.find('h3').get_text(strip=True),  # strip=True удаляет лишние пробелы
+                'Name': item.find('h3').get_text(strip=True),
                 'srcUTP': 'https://торги-россии.рф/lot/' + item.find('b', class_='text-primary').get_text(),
                 'description': item.find('p', class_='card__excerpt').get_text(),
                 'Price': item.find('div', class_='card__bids').get("data-current-bid")
